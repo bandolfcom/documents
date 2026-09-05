@@ -2,7 +2,7 @@
 
 The official developer documentation site for [BANDOLF](https://bandolf.com) — a React SPA that renders Markdown content with search, navigation, and API reference layouts.
 
-**Live site:** [doc.bandolf.com](https://doc.bandolf.com)
+**Live site:** [docs.bandolf.com](https://docs.bandolf.com)
 
 ## Tech Stack
 

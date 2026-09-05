@@ -6,15 +6,52 @@ on:
       - CI
     types:
       - completed
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
 
 jobs:
   deploy:
-    name: Deploy
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    if: >
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'push'
-
     steps:
-      - name: Placeholder
-        run: echo "CD henüz yapılandırılmadı."
+      - name: Install OpenVPN
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openvpn
+
+      - name: Create VPN config file
+        run: echo "${{ secrets.OPENVPN_CONFIG }}" > vpnconfig.ovpn
+
+      - name: Connect to VPN
+        run: |
+          sudo openvpn --config vpnconfig.ovpn --daemon
+          sleep 15
+
+      - name: Check Public IP (for VPN verification)
+        run: curl ifconfig.me
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: 22
+          key: ${{ secrets.SSHKEY }}
+          script: |
+            APP_DIR="/var/www/docs.bandolf.com"
+            cd "$APP_DIR"
+
+            sudo git config --global --get-all safe.directory 2>/dev/null | grep -qxF "$APP_DIR" \
+              || sudo git config --global --add safe.directory "$APP_DIR"
+
+            sudo git fetch origin
+            sudo git checkout main
+            sudo git reset --hard origin/main
+
+            sudo npm ci --ignore-scripts
+            sudo npm run build
