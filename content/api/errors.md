@@ -1,23 +1,82 @@
 ---
-title: API Hataları
-description: Lorem ipsum — API Hataları test içeriği.
-category: API
+title: API hata sözleşmesi
+description: JSON error nesnesi, doğrulama ve iframe sapması.
+category: API Reference
 slug: /docs/api/errors
-order: 48
+order: 3
+type: api
 ---
 
-# API Hataları
+# API hata sözleşmesi
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Rehber özeti: [Hatalar](/docs/guides/errors). Bu sayfa makine sözleşmesidir.
 
-## Test Başlığı 1
+## Biçim A (orkestrasyon)
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+```json
+{
+  "error": {
+    "code": "string",
+    "message": "string"
+  }
+}
+```
 
-## Test Başlığı 2
+Kullanıldığı yerler: 401, payment 422/500, checkout 422, payment/session 404, form 404, health 404, form abuse.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Form doğrulaması ek alan açar:
 
-## Test Başlığı 3
+```json
+{
+  "error": {
+    "code": "validation_failed",
+    "message": "Gönderilen veriler geçersiz.",
+    "details": {
+      "email": ["..."]
+    }
+  }
+}
+```
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Biçim B (doğrulama)
+
+İstek gövdesi şema doğrulamasından geçemezse HTTP 422 döner:
+
+```json
+{
+  "message": "...",
+  "errors": {
+    "card.expiry_month": ["Kart son kullanma ayı 01-12 arasında olmalıdır."]
+  }
+}
+```
+
+`provider_id.exists` mesajı: "Geçerli bir ödeme sağlayıcısı seçin."
+
+`card.expiry` dolmuş: `CardExpiry::EXPIRED_MESSAGE`.
+
+## Biçim C (iframe)
+
+HTTP 200.
+
+```json
+{
+  "status": "failed",
+  "reason": "Geçersiz bandolf_token."
+}
+```
+
+## Biçim D (hosted installments)
+
+HTTP 422.
+
+```json
+{
+  "message": "Ödeme oturumunun süresi doldu.",
+  "options": []
+}
+```
+
+## Kod tablosu
+
+Bakınız [Hata kodları](/docs/reference/error-codes).
