@@ -189,6 +189,7 @@ Kural: `id`, `currency`, `card_type`, `card_brand`, `card_country`, `installment
 | `programs[].provider_name` | string \| null |
 | `programs[].provider_slug` | string \| null |
 | `programs[].logo_url` | string \| null (`/providers/banks/*.svg`) |
+| `programs[].colors` | object (`primary`, `secondary`, `alternative` hex) |
 | `programs[].options` | 3 / 6 / 9 / 12 satırları; `options[]` ile aynı şekil |
 
-HTML `/odeme/taksit/{publicKey}` bu nesneyi JSON olarak dönmez. Yalnız mağazanın POS’una uyan kart programı ızgarasını çizer.
+HTML `/odeme/taksit/{publicKey}` bu nesneyi JSON olarak dönmez. Yalnız mağazanın POS’una uyan kart programı ızgarasını çizer. Sayfa arka planı `bg` veya `background` sorgu parametresi ile değişir (varsayılan `#EEF0F3`).

@@ -25,8 +25,11 @@ Accept: application/json
 
 | Alan | Zorunlu | Tip | Kural |
 |------|---------|-----|-------|
-| `amount` | Evet | number | min 0.01, max 10_000_000 |
+| `amount` | `amount_minor` yoksa evet | number | min 0.01, max 10_000_000. Ondalıklı TL (`1299.90`) |
+| `amount_minor` | `amount` yoksa evet | integer | min 1, max 1_000_000_000. Kuruş (`129990` = 1.299,90 TL) |
 | `currency` | Hayır | string | Varsayılan `TRY` |
+
+`amount` ve `amount_minor` birlikte gönderilirse `amount` kullanılır. Iframe `payment_amount` ile aynı kuruş biçimidir.
 | `card_type` | Hayır | string | Varsayılan `credit` |
 | `card_brand` | Hayır | string | Varsayılan `any` |
 | `card_country` | Hayır | string | Varsayılan `TR` |
@@ -35,7 +38,9 @@ Accept: application/json
 
 Müşteri tutarları hosted checkout vade çarpanlarıdır. BIN / canlı POS sorgusu yoktur.
 
-`options` tüm taksit sayılarını (tek çekim dahil) döner. `programs` HTML tablodaki kart programı ızgarasıdır. Kartlar mağazanın açık POS’larına göre seçilir (Garanti → Bonus, Akbank → Axess). Kart başlığı o POS’un `/providers/banks/*.svg` logosudur. Toplayıcı (PayTR, iyzico) yalnız issuer banka yoksa tüm programları doldurur; o zaman logo kart ailesinin bankasına aittir (WORLD → Yapı Kredi). Her programın `options` listesi 3 / 6 / 9 / 12 satırıdır (`max_installment` üst sınırı keser). `programs[].provider_slug` ve `programs[].logo_url` hangi POS ve logonun kullanıldığını gösterir.
+`options` tüm taksit sayılarını (tek çekim dahil) döner. `programs` HTML tablodaki kart programı ızgarasıdır. Kartlar mağazanın açık POS’larına göre seçilir (Garanti → Bonus, Akbank → Axess). Kart başlığı o POS’un `/providers/banks/*.svg` logosudur. Toplayıcı (PayTR, iyzico) yalnız issuer banka yoksa tüm programları doldurur; o zaman logo kart ailesinin bankasına aittir (WORLD → Yapı Kredi). Her programın `options` listesi 3 / 6 / 9 / 12 satırıdır (`max_installment` üst sınırı keser). `programs[].provider_slug` ve `programs[].logo_url` hangi POS ve logonun kullanıldığını gösterir. `programs[].colors` sağlayıcı marka renklerini verir (`primary`, `secondary`, `alternative`); HTML tabloda üst şerit `primary` rengini kullanır.
+
+HTML ile karşılaştırırken `data.programs` kullanın; üst seviye `options` banka bazlı değildir.
 
 `cost` alanı HTML tabloda yoktur. Birden fazla sağlayıcı varsa `provider_id` gönderin.
 
@@ -95,6 +100,15 @@ Gövde `{ "data": InstallmentTable }`.
       {
         "code": "axess",
         "name": "Axess",
+        "provider_id": 1,
+        "provider_name": "Akbank",
+        "provider_slug": "akbank",
+        "logo_url": "https://api.bandolf.com/providers/banks/akbank.svg",
+        "colors": {
+          "primary": "#E30613",
+          "secondary": "#FFFFFF",
+          "alternative": "#000000"
+        },
         "options": [
           {
             "count": 3,

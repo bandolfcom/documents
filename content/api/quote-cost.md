@@ -23,7 +23,8 @@ Accept: application/json
 
 | Alan | Zorunlu | Tip | Kural |
 |------|---------|-----|-------|
-| `amount` | Evet | number | min 0.01, max 10_000_000 |
+| `amount` | `amount_minor` yoksa evet | number | min 0.01, max 10_000_000. Ondalıklı TL |
+| `amount_minor` | `amount` yoksa evet | integer | min 1, max 1_000_000_000. Kuruş |
 | `installment_count` | Evet | integer | `0` tek çekimdir. `1`-`12` de kabul |
 | `currency` | Hayır | string | Varsayılan `TRY`. `TL` → `TRY` |
 | `card_type` | Hayır | string | `credit` (varsayılan) veya `debit` |

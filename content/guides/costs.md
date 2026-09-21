@@ -50,11 +50,13 @@ Canlı POS BIN sorgusu (iyzico / VakıfBank) bu API'de yoktur. O akış checkout
 
 ## Iframe
 
+Checkout'taki `payment_amount` kuruş değerini doğrudan gönderin. Sitenizin arka planına uyması için `bg` ekleyin (`#` URL'de `%23`):
+
 ```html
 <iframe
-  src="https://api.bandolf.com/odeme/taksit/pk_live_xxxxxxxx?amount=1299.90&currency=TRY"
+  src="https://api.bandolf.com/odeme/taksit/pk_live_xxxxxxxx?amount_minor=129990&currency=TRY&bg=%23FFFFFF"
   title="Taksit tablosu"
-  style="width:100%;border:0;min-height:420px"
+  style="width:100%;border:0;min-height:320px;background:transparent;"
 ></iframe>
 ```
 
@@ -70,4 +72,6 @@ window.addEventListener('message', function (event) {
 </script>
 ```
 
-Ayrıntı: [Maliyetleri getir](/docs/api/get-costs), [Maliyet hesapla](/docs/api/quote-cost), [Taksit tablosu JSON](/docs/api/get-installments), [HTML taksit tablosu](/docs/api/installment-table).
+Ürün sayfası görünüm örneği ve tam iframe rehberi: [HTML taksit tablosu](/docs/api/installment-table).
+
+Ayrıntı: [Maliyetleri getir](/docs/api/get-costs), [Maliyet hesapla](/docs/api/quote-cost), [Taksit tablosu JSON](/docs/api/get-installments).

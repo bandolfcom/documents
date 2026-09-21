@@ -75,10 +75,10 @@ Sandbox `redirect_url` bu yola işaret eder.
 ## Taksit tablosu
 
 ```
-GET https://api.bandolf.com/odeme/taksit/{publicKey}?amount=1299.90&currency=TRY
+GET https://api.bandolf.com/odeme/taksit/{publicKey}?amount_minor=129990&currency=TRY&bg=%23FFFFFF
 ```
 
-`publicKey` `pk_test_` veya `pk_live_` değeridir. Secret değildir. HTML döner. Iframe'e izin verir. Komisyon göstermez. Ayrıntı: [HTML taksit tablosu](/docs/api/installment-table).
+`publicKey` `pk_test_` veya `pk_live_` değeridir. Secret değildir. HTML döner. Iframe'e izin verir. Komisyon göstermez. `bg` / `background` ile sayfa arka plan rengi özelleştirilir. Ayrıntı: [HTML taksit tablosu](/docs/api/installment-table).
 
 ## Test mağaza
 

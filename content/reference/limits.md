@@ -26,7 +26,8 @@ Geliştirici yanlış varsaymasın diye bu sayfa net sınır çizer.
 | Form dosya | 10240 KB |
 | Form rate | 10 / 60 dk (varsayılan) |
 | Ödeme link kullanım limiti | 2-100000 (`limited` mod) |
-| Maliyet / taksit `amount` | min 0.01, max 10_000_000 |
+| Maliyet / taksit `amount` | min 0.01, max 10_000_000 (ondalıklı TL) |
+| Maliyet / taksit `amount_minor` | min 1, max 1_000_000_000 (kuruş) |
 | HTML taksit tablosu | 60 istek / dakika / IP |
 
 ## Henüz yok

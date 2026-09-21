@@ -147,7 +147,7 @@ Aşağıdakiler henüz sunulmaz.
 
 Zaman damgaları ISO-8601. Örnek: `2026-09-16T20:15:00+00:00`.
 
-Direct `amount` ondalıklı ana para birimidir. Iframe `payment_amount` kuruş integer'dır. Karıştırmayın.
+Direct ve maliyet/taksit sorgularında `amount` ondalıklı ana para birimidir (`1299.90`). Aynı uçlarda isteğe bağlı `amount_minor` kuruş integer'dır (`129990`). Iframe `payment_amount` da kuruştur. x10 gibi çarpan kullanılmaz; TRY için kuruş = TL × 100.
 
 ## Idempotency
 

@@ -47,6 +47,17 @@ Bu alanlar HMAC string'ine girer. Token hesaplarken POST ile aynı değerleri ku
 
 Secret istemezseniz HTML iframe kullanın: [HTML taksit tablosu](/docs/api/installment-table). Kendi UI'niz için JSON: [Taksit tablosu JSON](/docs/api/get-installments). Maliyet hesabı: [Maliyet kuralları](/docs/guides/costs).
 
+Tutar iki biçimde gider:
+
+- `amount=1299.90` — ondalıklı TL
+- `amount_minor=129990` — kuruş (iframe `payment_amount` ile aynı)
+
+`amount=1299` yalnızca 1.299,00 TL demektir. Kuruş için ondalık veya `amount_minor` kullanın.
+
+Tablo yalnızca **3, 6, 9 ve 12** taksit satırlarını gösterir. JSON `options` listesindeki 1–12 aralığı HTML'de yoktur; karşılaştırma için `programs` alanını kullanın.
+
+Arka plan rengi URL ile değişir: `bg` veya `background` (`#FFFFFF`, `ffffff` vb.). Varsayılan `#EEF0F3`. Kart üst şeridi sağlayıcının birincil rengidir; admin panelden ayarlanır.
+
 Canlı POS BIN sorgusu ürün sayfası tablosunda yoktur.
 
 ## Kart tipi
