@@ -1,7 +1,7 @@
 ---
 title: Durumlar
 description: Payment, session, link, order ve health durum tabloları.
-category: Reference
+category: Referans
 slug: /docs/reference/statuses
 order: 2
 ---

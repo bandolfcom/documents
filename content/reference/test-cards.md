@@ -1,7 +1,7 @@
 ---
 title: Test kartları ve veriler
 description: PayTR örnek PAN, taksit değerleri, subject enum, anahtar önekleri.
-category: Reference
+category: Referans
 slug: /docs/reference/test-cards
 order: 4
 ---

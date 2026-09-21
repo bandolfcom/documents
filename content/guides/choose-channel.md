@@ -1,7 +1,7 @@
 ---
 title: Kanal seçimi
 description: Direct API, hosted checkout, iframe ve ödeme linki arasında karar verin.
-category: Guides
+category: Ödeme Entegrasyonu
 slug: /docs/guides/choose-channel
 order: 1
 featured: true

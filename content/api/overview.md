@@ -1,7 +1,7 @@
 ---
 title: API genel bakış
 description: Tüm public HTTP endpoint'leri, taban URL, sarmalayıcı ve sürümleme.
-category: API Reference
+category: API Temelleri
 slug: /docs/api/overview
 order: 1
 type: api

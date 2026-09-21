@@ -1,7 +1,7 @@
 ---
 title: Hata kodları
 description: error.code, fraud kodları ve iframe reason listesi.
-category: Reference
+category: Referans
 slug: /docs/reference/error-codes
 order: 3
 ---

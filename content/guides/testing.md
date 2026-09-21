@@ -1,9 +1,9 @@
 ---
 title: Test etmek
 description: Sandbox, test kartları ve test mağazası.
-category: Guides
+category: Operasyon ve Araçlar
 slug: /docs/guides/testing
-order: 13
+order: 4
 ---
 
 # Test etmek

@@ -1,9 +1,9 @@
 ---
 title: Fraud
 description: Kara liste, graylist, kural motoru ve ödeme risk yanıtı.
-category: Guides
+category: Ödeme İşlemleri
 slug: /docs/guides/fraud
-order: 9
+order: 4
 ---
 
 # Fraud

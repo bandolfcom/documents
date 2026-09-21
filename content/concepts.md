@@ -1,7 +1,7 @@
 ---
 title: Kavramlar
 description: Merchant, anahtar, sağlayıcı, ödeme, oturum, sipariş ve fraud terimleri.
-category: Getting Started
+category: Başlangıç
 slug: /docs/concepts
 order: 3
 ---

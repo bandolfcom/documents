@@ -1,9 +1,9 @@
 ---
 title: Ödeme oluştur
 description: Direct API ile kart çekimi. POST /api/v1/payments.
-category: API Reference
+category: Ödemeler API
 slug: /docs/api/create-payment
-order: 4
+order: 1
 type: api
 method: POST
 endpoint: /api/v1/payments

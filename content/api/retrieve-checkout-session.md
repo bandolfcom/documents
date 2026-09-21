@@ -1,9 +1,9 @@
 ---
 title: Checkout oturumu getir
 description: Oturum ve bağlı ödeme id. GET /api/v1/checkout-sessions/{id}.
-category: API Reference
+category: Ödemeler API
 slug: /docs/api/retrieve-checkout-session
-order: 7
+order: 4
 type: api
 method: GET
 endpoint: /api/v1/checkout-sessions/{sessionId}

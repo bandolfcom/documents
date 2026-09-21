@@ -1,7 +1,7 @@
 ---
 title: BANDOLF nedir
 description: BANDOLF ödeme orkestrasyon platformunun geliştirici tanıtımı.
-category: Getting Started
+category: Başlangıç
 slug: /docs
 order: 1
 featured: true

@@ -35,8 +35,27 @@ for (const [key, raw] of Object.entries(modules)) {
   }
 }
 
+const SECTION_META: Record<
+  string,
+  { order: number; group: 'start' | 'guides' | 'api' | 'reference' }
+> = {
+  Başlangıç: { order: 1, group: 'start' },
+  'Ödeme Entegrasyonu': { order: 2, group: 'guides' },
+  'Ödeme İşlemleri': { order: 3, group: 'guides' },
+  'Operasyon ve Araçlar': { order: 4, group: 'guides' },
+  'API Temelleri': { order: 5, group: 'api' },
+  'Ödemeler API': { order: 6, group: 'api' },
+  'Iframe ve Formlar API': { order: 7, group: 'api' },
+  'Sistem API': { order: 8, group: 'api' },
+  Referans: { order: 9, group: 'reference' },
+}
+
 function getSortOrder(doc: DocPage, fallback: number): number {
   return doc.frontmatter.order ?? fallback
+}
+
+function getSectionOrder(category: string): number {
+  return SECTION_META[category]?.order ?? 999
 }
 
 function toNavItem(doc: DocPage): NavItem {
@@ -64,20 +83,28 @@ export function getNavSections(): NavSection[] {
   if (cachedNavSections) return cachedNavSections
 
   const sortedDocs = getSortedDocs().filter((doc) => doc.frontmatter.sidebar !== false)
-  const sectionsMap = new Map<string, { items: NavItem[]; sectionOrder: number }>()
+  const sectionsMap = new Map<string, { items: Array<{ item: NavItem; order: number }> }>()
 
   sortedDocs.forEach((doc, index) => {
     const category = doc.frontmatter.category ?? 'Diğer'
-    const section = sectionsMap.get(category) ?? { items: [], sectionOrder: index }
+    const section = sectionsMap.get(category) ?? { items: [] }
 
-    section.items.push(toNavItem(doc))
-    section.sectionOrder = Math.min(section.sectionOrder, getSortOrder(doc, index))
+    section.items.push({ item: toNavItem(doc), order: getSortOrder(doc, index) })
     sectionsMap.set(category, section)
   })
 
   cachedNavSections = [...sectionsMap.entries()]
-    .sort((a, b) => a[1].sectionOrder - b[1].sectionOrder)
-    .map(([title, { items }]) => ({ title, items }))
+    .sort((a, b) => getSectionOrder(a[0]) - getSectionOrder(b[0]))
+    .map(([title, { items }]) => {
+      const meta = SECTION_META[title]
+      return {
+        title,
+        group: meta?.group,
+        items: items
+          .sort((a, b) => a.order - b.order)
+          .map(({ item }) => item),
+      }
+    })
 
   return cachedNavSections
 }

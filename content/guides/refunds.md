@@ -1,9 +1,9 @@
 ---
 title: İptal ve iade
 description: Panelden cancel ve refund. Public REST henüz yok.
-category: Guides
+category: Ödeme İşlemleri
 slug: /docs/guides/refunds
-order: 8
+order: 3
 ---
 
 # İptal ve iade

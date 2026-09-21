@@ -1,7 +1,7 @@
 ---
 title: API hata sözleşmesi
 description: JSON error nesnesi, doğrulama ve iframe sapması.
-category: API Reference
+category: API Temelleri
 slug: /docs/api/errors
 order: 3
 type: api

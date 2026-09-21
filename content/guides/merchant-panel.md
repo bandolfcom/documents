@@ -1,9 +1,9 @@
 ---
 title: Merchant paneli
 description: Üye işyeri arayüzünün menüleri, roller ve güvenlik akışı.
-category: Guides
+category: Operasyon ve Araçlar
 slug: /docs/guides/merchant-panel
-order: 15
+order: 6
 ---
 
 # Merchant paneli

@@ -1,9 +1,9 @@
 ---
 title: Ödeme linkleri
 description: Panelden pl_ token'lı link üretin, müşteriyi hosted sayfaya gönderin.
-category: Guides
+category: Ödeme İşlemleri
 slug: /docs/guides/payment-links
-order: 7
+order: 2
 ---
 
 # Ödeme linkleri

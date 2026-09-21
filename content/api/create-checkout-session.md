@@ -1,9 +1,9 @@
 ---
 title: Checkout oturumu oluştur
 description: Hosted ödeme oturumu aç. POST /api/v1/checkout-sessions.
-category: API Reference
+category: Ödemeler API
 slug: /docs/api/create-checkout-session
-order: 6
+order: 3
 type: api
 method: POST
 endpoint: /api/v1/checkout-sessions

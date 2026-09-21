@@ -1,7 +1,7 @@
 ---
 title: Sınırlar ve eksikler
 description: Sunulan ile henüz sunulmayan özellikler.
-category: Reference
+category: Referans
 slug: /docs/reference/limits
 order: 5
 ---

@@ -1,7 +1,7 @@
 ---
 title: Ortamlar ve adresler
 description: Test ve live anahtarlar, production host'ları ve istek biçimleri.
-category: Getting Started
+category: Başlangıç
 slug: /docs/environments
 order: 5
 ---

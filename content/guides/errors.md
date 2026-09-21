@@ -1,9 +1,9 @@
 ---
 title: Hatalar
 description: HTTP kodları, error.code değerleri, iframe reason ve doğrulama yanıtları.
-category: Guides
+category: Operasyon ve Araçlar
 slug: /docs/guides/errors
-order: 14
+order: 5
 ---
 
 # Hatalar

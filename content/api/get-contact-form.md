@@ -1,9 +1,9 @@
 ---
 title: İletişim formu şeması
 description: Sabit landing form şeması. GET /api/v1/contact-form.
-category: API Reference
+category: Iframe ve Formlar API
 slug: /docs/api/get-contact-form
-order: 11
+order: 4
 type: api
 method: GET
 endpoint: /api/v1/contact-form

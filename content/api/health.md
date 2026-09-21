@@ -1,9 +1,9 @@
 ---
 title: Health özeti
 description: Tüm bileşenlerin durumu. GET /healths.
-category: API Reference
+category: Sistem API
 slug: /docs/api/health
-order: 13
+order: 1
 type: api
 method: GET
 endpoint: /healths

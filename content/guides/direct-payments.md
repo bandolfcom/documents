@@ -1,7 +1,7 @@
 ---
 title: Direct ödemeler
 description: Kartı sunucunuzdan göndererek çekim alın.
-category: Guides
+category: Ödeme Entegrasyonu
 slug: /docs/guides/direct-payments
 order: 2
 ---

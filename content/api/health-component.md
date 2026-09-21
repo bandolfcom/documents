@@ -1,9 +1,9 @@
 ---
 title: Health bileşeni
 description: Tek bileşen. GET /healths/{component}.
-category: API Reference
+category: Sistem API
 slug: /docs/api/health-component
-order: 14
+order: 2
 type: api
 method: GET
 endpoint: /healths/{component}

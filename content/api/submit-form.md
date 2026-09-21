@@ -1,9 +1,9 @@
 ---
 title: Form gönder
 description: Dinamik form submission. POST /api/v1/forms/{formId}/submissions.
-category: API Reference
+category: Iframe ve Formlar API
 slug: /docs/api/submit-form
-order: 10
+order: 3
 type: api
 method: POST
 endpoint: /api/v1/forms/{formId}/submissions

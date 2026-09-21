@@ -1,9 +1,9 @@
 ---
 title: Hosted sayfalar
 description: HTML checkout, taksit JSON, iframe ve 3DS path'leri.
-category: API Reference
+category: Sistem API
 slug: /docs/api/hosted-pages
-order: 16
+order: 4
 type: api
 ---
 

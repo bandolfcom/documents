@@ -1,9 +1,9 @@
 ---
 title: Form şeması getir
 description: Aktif formun public şeması. GET /api/v1/forms/{formId}.
-category: API Reference
+category: Iframe ve Formlar API
 slug: /docs/api/get-form
-order: 9
+order: 2
 type: api
 method: GET
 endpoint: /api/v1/forms/{formId}

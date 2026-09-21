@@ -1,7 +1,7 @@
 ---
 title: Nesneler
 description: Payment, CheckoutSession, risk ve form JSON şemaları.
-category: Reference
+category: Referans
 slug: /docs/reference/objects
 order: 1
 ---

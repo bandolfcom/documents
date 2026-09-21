@@ -1,9 +1,9 @@
 ---
 title: Ödeme getir
 description: ULID ile ödeme oku. GET /api/v1/payments/{id}.
-category: API Reference
+category: Ödemeler API
 slug: /docs/api/retrieve-payment
-order: 5
+order: 2
 type: api
 method: GET
 endpoint: /api/v1/payments/{paymentId}

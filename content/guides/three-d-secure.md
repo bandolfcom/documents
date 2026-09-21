@@ -1,7 +1,7 @@
 ---
 title: 3D Secure
 description: requires_action yanıtı, ACS form_post, hosted ve iframe 3DS sayfaları.
-category: Guides
+category: Ödeme Entegrasyonu
 slug: /docs/guides/three-d-secure
 order: 5
 ---

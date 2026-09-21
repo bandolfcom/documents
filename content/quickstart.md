@@ -1,7 +1,7 @@
 ---
 title: Hızlı başlangıç
 description: API anahtarı alın, ilk checkout oturumunu veya Direct ödemeyi oluşturun.
-category: Getting Started
+category: Başlangıç
 slug: /docs/quickstart
 order: 2
 featured: true

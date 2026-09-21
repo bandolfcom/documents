@@ -1,9 +1,9 @@
 ---
 title: İletişim formu gönder
 description: Landing iletişim kaydı. POST /api/v1/contact-form/submissions.
-category: API Reference
+category: Iframe ve Formlar API
 slug: /docs/api/submit-contact-form
-order: 12
+order: 5
 type: api
 method: POST
 endpoint: /api/v1/contact-form/submissions

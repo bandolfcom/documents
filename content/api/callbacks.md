@@ -1,9 +1,9 @@
 ---
 title: Banka callback'leri
 description: PayTR webhook, VakıfBank ve Garanti 3DS dönüş URL'leri.
-category: API Reference
+category: Sistem API
 slug: /docs/api/callbacks
-order: 15
+order: 3
 type: api
 ---
 

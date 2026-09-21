@@ -1,9 +1,9 @@
 ---
 title: Ödeme sağlayıcıları
 description: PayTR, VakıfBank, Garanti, Sandbox ve katalogdaki diğer POS'lar.
-category: Guides
+category: Operasyon ve Araçlar
 slug: /docs/guides/providers
-order: 12
+order: 3
 ---
 
 # Ödeme sağlayıcıları

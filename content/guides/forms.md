@@ -1,9 +1,9 @@
 ---
 title: Formlar
 description: Public form şeması, gönderim, abuse koruması ve iletişim formu.
-category: Guides
+category: Operasyon ve Araçlar
 slug: /docs/guides/forms
-order: 10
+order: 1
 ---
 
 # Formlar

@@ -1,9 +1,9 @@
 ---
 title: Iframe token al
 description: HMAC ile sipariş token'ı. POST /api/get-token.
-category: API Reference
+category: Iframe ve Formlar API
 slug: /docs/api/get-token
-order: 8
+order: 1
 type: api
 method: POST
 endpoint: /api/get-token

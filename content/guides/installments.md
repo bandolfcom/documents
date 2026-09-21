@@ -1,9 +1,9 @@
 ---
 title: Taksitler
 description: Direct installment_count, hosted taksit sorgusu ve iframe max_installment.
-category: Guides
+category: Ödeme İşlemleri
 slug: /docs/guides/installments
-order: 6
+order: 1
 ---
 
 # Taksitler

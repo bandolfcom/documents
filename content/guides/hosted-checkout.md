@@ -1,7 +1,7 @@
 ---
 title: Hosted checkout
 description: Checkout session açın, müşteriyi BANDOLF ödeme sayfasına yönlendirin.
-category: Guides
+category: Ödeme Entegrasyonu
 slug: /docs/guides/hosted-checkout
 order: 3
 ---

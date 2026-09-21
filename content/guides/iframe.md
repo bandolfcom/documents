@@ -1,7 +1,7 @@
 ---
 title: Iframe entegrasyonu
 description: HMAC ile token alın ve BANDOLF ödeme sayfasını iframe içine gömün.
-category: Guides
+category: Ödeme Entegrasyonu
 slug: /docs/guides/iframe
 order: 4
 ---

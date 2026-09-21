@@ -1,9 +1,9 @@
 ---
 title: POS izleme
 description: Başarı oranı, kesinti, alarm ve health.
-category: Guides
+category: Operasyon ve Araçlar
 slug: /docs/guides/monitoring
-order: 11
+order: 2
 ---
 
 # POS izleme

@@ -27,6 +27,7 @@ export interface NavItem {
 
 export interface NavSection {
   title: string
+  group?: 'start' | 'guides' | 'api' | 'reference'
   items: NavItem[]
 }
 

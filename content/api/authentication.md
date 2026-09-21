@@ -1,7 +1,7 @@
 ---
 title: API kimlik doğrulama
 description: Bearer ve X-Api-Key kullanımı, 401 gövdeleri.
-category: API Reference
+category: API Temelleri
 slug: /docs/api/authentication
 order: 2
 type: api

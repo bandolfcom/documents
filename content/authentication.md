@@ -1,7 +1,7 @@
 ---
 title: Kimlik doğrulama
 description: API anahtarları, header'lar, HMAC ve panel oturumları.
-category: Getting Started
+category: Başlangıç
 slug: /docs/authentication
 order: 4
 ---
