@@ -113,7 +113,7 @@ export function getNavSections(): NavSection[] {
 export function getAllNavItems(): NavItem[] {
   if (cachedFlatNav) return cachedFlatNav
 
-  cachedFlatNav = getSortedDocs().map(toNavItem)
+  cachedFlatNav = getNavSections().flatMap((section) => section.items)
   return cachedFlatNav
 }
 

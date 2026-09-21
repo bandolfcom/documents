@@ -35,7 +35,7 @@ Accept: application/json
 
 Müşteri tutarları hosted checkout vade çarpanlarıdır. BIN / canlı POS sorgusu yoktur.
 
-`options` tüm taksit sayılarını (tek çekim dahil) döner. `programs` HTML tablodaki kart programı ızgarasıdır. Kartlar mağazanın açık POS’larına göre seçilir (Garanti → Bonus, Akbank → Axess). Toplayıcı (PayTR, iyzico) yalnız issuer banka yoksa tüm programları doldurur. Her programın `options` listesi 3 / 6 / 9 / 12 satırıdır (`max_installment` üst sınırı keser). `programs[].provider_slug` hangi POS’un kartı olduğunu gösterir.
+`options` tüm taksit sayılarını (tek çekim dahil) döner. `programs` HTML tablodaki kart programı ızgarasıdır. Kartlar mağazanın açık POS’larına göre seçilir (Garanti → Bonus, Akbank → Axess). Kart başlığı o POS’un `/providers/banks/*.svg` logosudur. Toplayıcı (PayTR, iyzico) yalnız issuer banka yoksa tüm programları doldurur; o zaman logo kart ailesinin bankasına aittir (WORLD → Yapı Kredi). Her programın `options` listesi 3 / 6 / 9 / 12 satırıdır (`max_installment` üst sınırı keser). `programs[].provider_slug` ve `programs[].logo_url` hangi POS ve logonun kullanıldığını gösterir.
 
 `cost` alanı HTML tabloda yoktur. Birden fazla sağlayıcı varsa `provider_id` gönderin.
 
