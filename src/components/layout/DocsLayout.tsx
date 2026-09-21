@@ -1,4 +1,5 @@
-import { useState, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Header } from './Header'
 import { Sidebar } from './Sidebar'
@@ -10,7 +11,13 @@ interface DocsLayoutProps {
 }
 
 export function DocsLayout({ children, toc, onSearchOpen }: DocsLayoutProps) {
+  const { pathname, hash } = useLocation()
   const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  useEffect(() => {
+    if (hash) return
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [pathname, hash])
 
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-[#0b0f17]">
