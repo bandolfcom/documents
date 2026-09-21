@@ -56,6 +56,7 @@ Form gönderimi `details` anahtarını kullanır.
 | `not_found` | 404 | Payment veya checkout session |
 | `checkout_session_error` | 422 | Session create |
 | `form_not_found` | 404 | Form şema veya submit |
+| `provider_not_configured` | 422 | Maliyet quote / taksit, yapılandırılmamış `provider_id` |
 | `validation_failed` | 422 | Form alanları |
 | `submission_rejected` | 422 | Honeypot veya timing |
 | `component_not_found` | 404 | `/healths/{bilinmeyen}` |
@@ -82,6 +83,12 @@ Review durumunda HTTP 201 olabilir. Çünkü kayıt oluşmuştur. `status` `revi
 - Bu order_id ile zaten bir ödeme oturumu mevcut. (`422 checkout_session_error`)
 - Ödeme oturumu bulunamadı. (`404`)
 - HTML sayfada: oturum tamamlandı, süresi doldu, kullanılamıyor.
+
+## Maliyet ve taksit
+
+- `GET /api/v1/costs*` ve `GET /api/v1/installments` secret ister. 401 gövdesi ödeme ile aynıdır.
+- Yapılandırılmamış `provider_id`: `422 provider_not_configured`.
+- HTML `/odeme/taksit/{publicKey}` JSON dönmez. 404 veya 422 HTML mesajıdır.
 
 ## Iframe
 

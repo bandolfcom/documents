@@ -44,7 +44,7 @@ Her anahtarın ortamı `TEST` veya `LIVE` olur.
 | `is_default` | Ortamın varsayılan anahtarı |
 | `is_active` | Pasif anahtar isteği reddeder |
 
-Direct API ve checkout secret anahtar ister. Iframe HMAC secret ve salt ister. Public anahtar Direct API'de yetki vermez.
+Direct API ve checkout secret anahtar ister. Iframe HMAC secret ve salt ister. Public anahtar Direct API'de yetki vermez. HTML taksit tablosu `pk_` ile açılır.
 
 ## Banka (sağlayıcı)
 

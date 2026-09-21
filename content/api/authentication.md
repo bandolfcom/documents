@@ -55,7 +55,7 @@ Yanlış veya pasif merchant:
 }
 ```
 
-Public `pk_` anahtarı da "geçersiz"e düşer. Çünkü hash secret'a aittir.
+Public `pk_` anahtarı Direct JSON API'de kabul edilmez. Hash secret'a aittir. `pk_` değeri [HTML taksit tablosu](/docs/api/installment-table) path'inde kullanılır.
 
 ## curl
 

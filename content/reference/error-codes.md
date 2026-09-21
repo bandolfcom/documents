@@ -18,6 +18,7 @@ order: 3
 | `not_found` | 404 | Ödeme bulunamadı. / Ödeme oturumu bulunamadı. |
 | `checkout_session_error` | 422 | Bu order_id ile zaten bir ödeme oturumu mevcut. |
 | `form_not_found` | 404 | Form bulunamadı veya aktif değil. |
+| `provider_not_configured` | 422 | Ödeme sağlayıcısı yapılandırılmamış. |
 | `validation_failed` | 422 | Gönderilen veriler geçersiz. |
 | `submission_rejected` | 422 | Abuse (honeypot vb.) |
 | `component_not_found` | 404 | Bilinmeyen health bileşeni. |
@@ -78,6 +79,13 @@ Sağlayıcı kodları bankaya göre değişir. Örnek: `05`, `DECLINED`, PayTR `
 | Bu ödeme oturumu zaten tamamlandı. |
 | Ödeme oturumunun süresi doldu. |
 | Bu ödeme oturumu artık kullanılamıyor. |
+
+## Taksit tablosu HTML mesajları
+
+| Mesaj | HTTP |
+|-------|------|
+| Taksit tablosu bulunamadı. | 404 |
+| Tutar alanı zorunludur. | 422 |
 
 ## İletişim formu validation
 

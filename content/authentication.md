@@ -48,6 +48,9 @@ X-Api-Key: sk_live_xxxxxxxx
 | `GET /api/v1/payments/{id}` | Secret |
 | `POST /api/v1/checkout-sessions` | Secret |
 | `GET /api/v1/checkout-sessions/{id}` | Secret |
+| `GET /api/v1/costs` | Secret |
+| `GET /api/v1/costs/quote` | Secret |
+| `GET /api/v1/installments` | Secret |
 
 Anahtar hash ile doğrulanır. Merchant veya anahtar aktif değilse istek `401` olur.
 
@@ -77,7 +80,7 @@ Anahtar geçersizse veya merchant pasifse:
 
 ### Public anahtar
 
-`pk_test_` ve `pk_live_` değerleri Direct API'de kabul edilmez. Public anahtarı iframe HMAC'inde de kullanmayın.
+`pk_test_` ve `pk_live_` değerleri Direct API'de kabul edilmez. Public anahtarı iframe HMAC'inde de kullanmayın. HTML taksit tablosu path'inde `pk_` kullanılır: [HTML taksit tablosu](/docs/api/installment-table).
 
 ## Iframe HMAC
 
@@ -127,6 +130,7 @@ Aşağıdaki çağrılar public'tir. Yine de kötüye kullanım koruması olabil
 | `GET /pay/{session}` | Oturum id'sini bilmek |
 | `GET /pay/link/{token}` | Link token'ını bilmek |
 | `GET /odeme/guvenli/{token}` | Iframe token'ını bilmek |
+| `GET /odeme/taksit/{publicKey}` | Public key + tutar |
 | Banka callback'leri | Sağlayıcı imzası veya 3DS parametreleri |
 
 Public checkout URL'sini rastgele tahmin etmek zordur. Yine de `order_id` ve tutar gibi bilgileri URL'de sızdırmayın. Dönüş adreslerini kendi domain'inizde tutun.

@@ -26,6 +26,8 @@ Geliştirici yanlış varsaymasın diye bu sayfa net sınır çizer.
 | Form dosya | 10240 KB |
 | Form rate | 10 / 60 dk (varsayılan) |
 | Ödeme link kullanım limiti | 2-100000 (`limited` mod) |
+| Maliyet / taksit `amount` | min 0.01, max 10_000_000 |
+| HTML taksit tablosu | 60 istek / dakika / IP |
 
 ## Henüz yok
 
@@ -51,6 +53,7 @@ Health içindeki webhooks bileşeni banka dönüş URL'lerinin ayakta olup olmad
 | İzleme | Skor ve alarm var, otomatik POS kapatma tam değil |
 | Formlar | Public gönderim var, başvuru güncelleme API'si yok |
 | Çoklu para | `TRY`, `USD`, `EUR`. Gerçek FX ürünü ayrı |
+| Maliyet / taksit API | Katalog, quote ve tablo var. BIN canlı sorgu yok. Yazma API'si yok |
 
 ## Vizyon
 

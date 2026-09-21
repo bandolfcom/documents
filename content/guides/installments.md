@@ -1,6 +1,6 @@
 ---
 title: Taksitler
-description: Direct installment_count, hosted taksit sorgusu ve iframe max_installment.
+description: Direct installment_count, hosted taksit sorgusu, iframe ve ürün sayfası tablosu.
 category: Ödeme İşlemleri
 slug: /docs/guides/installments
 order: 1
@@ -42,6 +42,12 @@ KDV oturum toplamına zaten yansımıştır. Taksit çarpanı bu toplam üzerind
 - `max_installment` 0-12 arası integer.
 
 Bu alanlar HMAC string'ine girer. Token hesaplarken POST ile aynı değerleri kullanın. Göndermezseniz hash tarafında da `"0"` varsayılanını kullanın.
+
+## Ürün sayfası tablosu
+
+Secret istemezseniz HTML iframe kullanın: [HTML taksit tablosu](/docs/api/installment-table). Kendi UI'niz için JSON: [Taksit tablosu JSON](/docs/api/get-installments). Maliyet hesabı: [Maliyet kuralları](/docs/guides/costs).
+
+Canlı POS BIN sorgusu ürün sayfası tablosunda yoktur.
 
 ## Kart tipi
 

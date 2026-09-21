@@ -56,3 +56,5 @@ Panelde sık görülen alan adları: `api_key`, `api_secret`, `username`, `passw
 ## Maliyet kuralları
 
 Komisyon kuralları çekim yönlendirmesini bugün otomatik seçmez. Fiyatlandırma ve rapor içindir. Akıllı routing vizyondadır, tam ürün değildir.
+
+Kuralları okumak: [Maliyet kuralları](/docs/guides/costs), [Maliyetleri getir](/docs/api/get-costs).

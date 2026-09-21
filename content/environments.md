@@ -27,7 +27,7 @@ Test ödemesi gerçek karta çekim yapmamalıdır. Yine de bağlı sağlayıcın
 
 | Yüzey | Host | Örnek yollar |
 |-------|------|--------------|
-| API | `api.bandolf.com` | `/api/v1/payments`, `/healths`, `/pay/{id}` |
+| API | `api.bandolf.com` | `/api/v1/payments`, `/api/v1/costs`, `/healths`, `/pay/{id}`, `/odeme/taksit/{pk}` |
 | Merchant paneli | `app.bandolf.com` | `/user/login`, `/user/` |
 | Kök | `bandolf.com` | Merchant panele yönlendirme |
 | Durum | `bandolf.statuspage.io` | Harici durum sayfası |

@@ -45,9 +45,10 @@ const SECTION_META: Record<
   'Operasyon ve Araçlar': { order: 4, group: 'guides' },
   'API Temelleri': { order: 5, group: 'api' },
   'Ödemeler API': { order: 6, group: 'api' },
-  'Iframe ve Formlar API': { order: 7, group: 'api' },
-  'Sistem API': { order: 8, group: 'api' },
-  Referans: { order: 9, group: 'reference' },
+  'Maliyet ve Taksit API': { order: 7, group: 'api' },
+  'Iframe ve Formlar API': { order: 8, group: 'api' },
+  'Sistem API': { order: 9, group: 'api' },
+  Referans: { order: 10, group: 'reference' },
 }
 
 function getSortOrder(doc: DocPage, fallback: number): number {

@@ -1,6 +1,6 @@
 ---
 title: Nesneler
-description: Payment, CheckoutSession, risk ve form JSON şemaları.
+description: Payment, CheckoutSession, maliyet, taksit ve form JSON şemaları.
 category: Referans
 slug: /docs/reference/objects
 order: 1
@@ -122,3 +122,72 @@ Sarmalayıcı yok. Alanlar: `id`, `name`, `description`, `success_message`, `abu
 | `components` | map |
 
 Her bileşen: `component`, `status`, `message`, `checked_at`, `meta`.
+
+## CostCatalog
+
+`object`: `cost_catalog`. Yanıt `{ "data": { ... } }` sarmalayıcısı içindedir.
+
+| Alan | Tip |
+|------|-----|
+| `providers` | array |
+| `providers[].id` | integer (`banks.id`) |
+| `providers[].name` | string |
+| `providers[].slug` | string |
+| `providers[].is_enabled` | boolean |
+| `providers[].bank_is_active` | boolean |
+| `providers[].default_cost` | object |
+| `providers[].default_cost.currency` | string |
+| `providers[].default_cost.commission_rate` | string \| null |
+| `providers[].default_cost.fixed_fee` | string \| null |
+| `providers[].rules` | array (yalnız aktif) |
+
+Kural: `id`, `currency`, `card_type`, `card_brand`, `card_country`, `installment_min`, `installment_max`, `amount_min`, `amount_max`, `commission_rate`, `fixed_fee`, `valid_from`, `valid_until`, `priority`. Credential yok.
+
+## CostQuote
+
+`object`: `cost_quote`.
+
+| Alan | Tip |
+|------|-----|
+| `amount` | number |
+| `currency` | string |
+| `installment_count` | integer |
+| `card_type` | string |
+| `card_brand` | string |
+| `card_country` | string |
+| `quotes` | array |
+| `quotes[].provider_id` | integer |
+| `quotes[].source` | `rule` veya `default` |
+| `quotes[].matched_rule_id` | integer \| null |
+| `quotes[].commission_rate` | string |
+| `quotes[].fixed_fee` | string |
+| `quotes[].commission_amount` | string |
+| `quotes[].total_cost` | string |
+| `quotes[].effective_rate` | string |
+
+## InstallmentTable
+
+`object`: `installment_table`.
+
+| Alan | Tip |
+|------|-----|
+| `amount` | number |
+| `currency` | string |
+| `options` | array |
+| `options[].count` | integer |
+| `options[].label` | string |
+| `options[].monthly` | string (TR biçim) |
+| `options[].total` | string (TR biçim) |
+| `options[].term_diff_amount` | string |
+| `options[].is_cash_price` | boolean |
+| `options[].pricing_label` | `Peşin fiyatına` veya `Vade farklı` |
+| `options[].cost` | object \| null (yalnız secret JSON) |
+| `programs` | array (kart programı kartları; mağaza POS’una göre) |
+| `programs[].code` | `bonus`, `axess`, `world`, … |
+| `programs[].name` | string |
+| `programs[].provider_id` | integer \| null |
+| `programs[].provider_name` | string \| null |
+| `programs[].provider_slug` | string \| null |
+| `programs[].options` | 3 / 6 / 9 / 12 satırları; `options[]` ile aynı şekil |
+
+HTML `/odeme/taksit/{publicKey}` bu nesneyi JSON olarak dönmez. Yalnız mağazanın POS’una uyan kart programı ızgarasını çizer.

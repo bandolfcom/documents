@@ -15,7 +15,7 @@ Taban URL:
 https://api.bandolf.com
 ```
 
-Sürüm öneki `/api/v1` Direct ödeme, checkout ve formlar içindir. Iframe `/api/get-token` sürüm öneki kullanmaz. Health `/healths` API öneki kullanmaz.
+Sürüm öneki `/api/v1` Direct ödeme, checkout, maliyet, taksit ve formlar içindir. Iframe `/api/get-token` sürüm öneki kullanmaz. Health `/healths` API öneki kullanmaz. HTML taksit tablosu `/odeme/taksit/{publicKey}` sürüm öneki kullanmaz.
 
 ## Kimlik özeti
 
@@ -23,18 +23,19 @@ Sürüm öneki `/api/v1` Direct ödeme, checkout ve formlar içindir. Iframe `/a
 |------|--------|
 | `/api/v1/payments` | Bearer veya `X-Api-Key` secret |
 | `/api/v1/checkout-sessions` | aynı |
+| `/api/v1/costs`, `/api/v1/installments` | aynı |
 | `/api/get-token` | HMAC |
 | `/api/v1/forms/*` | Form public id + abuse |
 | `/api/v1/contact-form*` | abuse |
 | `/healths*` | yok |
 | `/api/callbacks/*` | banka |
-| `/pay/*`, `/odeme/*` | token bilgisi |
+| `/pay/*`, `/odeme/*` | token veya public key |
 
 Ayrıntı: [API kimlik doğrulama](/docs/api/authentication).
 
 ## JSON sarmalayıcı
 
-Ödeme ve checkout yanıtları `data` anahtarı içindedir.
+Ödeme, checkout, maliyet ve taksit JSON yanıtları `data` anahtarı içindedir.
 
 ```json
 {
@@ -78,6 +79,15 @@ Content-Type: application/x-www-form-urlencoded
 | GET | `/pay/{id}` | HTML ödeme sayfası |
 | POST | `/pay/{id}` | Kart gönder (form) |
 | POST | `/pay/{id}/installments` | Taksit JSON |
+
+### Maliyet ve taksit
+
+| Metod | Yol | Açıklama |
+|-------|-----|----------|
+| GET | `/api/v1/costs` | Maliyet katalogu |
+| GET | `/api/v1/costs/quote` | Senaryo maliyeti |
+| GET | `/api/v1/installments` | Taksit JSON + maliyet |
+| GET | `/odeme/taksit/{publicKey}` | HTML taksit tablosu |
 
 ### Iframe
 

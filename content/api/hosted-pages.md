@@ -1,6 +1,6 @@
 ---
 title: Hosted sayfalar
-description: HTML checkout, taksit JSON, iframe ve 3DS path'leri.
+description: HTML checkout, taksit tablosu, iframe ve 3DS path'leri.
 category: Sistem API
 slug: /docs/api/hosted-pages
 order: 4
@@ -71,6 +71,14 @@ POST https://api.bandolf.com/odeme/3ds/odeme/{paymentPublicId}
 ```
 
 Sandbox `redirect_url` bu yola işaret eder.
+
+## Taksit tablosu
+
+```
+GET https://api.bandolf.com/odeme/taksit/{publicKey}?amount=1299.90&currency=TRY
+```
+
+`publicKey` `pk_test_` veya `pk_live_` değeridir. Secret değildir. HTML döner. Iframe'e izin verir. Komisyon göstermez. Ayrıntı: [HTML taksit tablosu](/docs/api/installment-table).
 
 ## Test mağaza
 

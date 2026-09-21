@@ -22,7 +22,7 @@ Rehber özeti: [Hatalar](/docs/guides/errors). Bu sayfa makine sözleşmesidir.
 }
 ```
 
-Kullanıldığı yerler: 401, payment 422/500, checkout 422, payment/session 404, form 404, health 404, form abuse.
+Kullanıldığı yerler: 401, payment 422/500, checkout 422, payment/session 404, form 404, health 404, form abuse, maliyet `provider_not_configured`.
 
 Form doğrulaması ek alan açar:
 
