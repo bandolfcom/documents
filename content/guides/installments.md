@@ -26,6 +26,7 @@ Oturum açarken:
 
 - `options.no_installment: true` taksit seçimini kapatır.
 - `options.max_installment` üst sınırı 1-12 yapar.
+- `options.installment_plus` varsayılan `true`. `false` ise taksitler ödeme formunda radyo listesi olarak gösterilir; `true` ise ayrı taksit paneli açılır.
 
 Sayfa kart numarası BIN'ini alınca `POST /pay/{session}/installments` çağırır. Gövde kartın ilk hanelerini içerir. Yanıt `options` listesidir. Her seçenek taksit sayısı ve ödenecek tutarı gösterir.
 

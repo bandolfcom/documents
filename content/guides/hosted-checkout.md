@@ -54,6 +54,7 @@ Aynı `order_id` ile ikinci oturum `422` döner.
 | `options.sync_mode` | Varsayılan hosted ödeme yükünde `true` |
 | `options.expires_in_minutes` | Süre |
 | `options.collect_billing_address` | Varsayılan `true`. `false` ise form adres sormaz. Sizin gönderdiğiniz adresi kullanır. |
+| `options.installment_plus` | Varsayılan `true`. `true` ise kredi kartında «Taksit Seçeneklerini Gör» ile ayrı panel açılır. `false` ise taksitler kart alanının altında liste halinde gelir; müşteri doğrudan öde butonuna basar. |
 
 ## Fatura adresi
 

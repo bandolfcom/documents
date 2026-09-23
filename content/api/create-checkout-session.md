@@ -72,6 +72,7 @@ Başarı: `201`.
 | `sync_mode` | boolean |
 | `expires_in_minutes` | 5-1440, varsayılan 60 |
 | `collect_billing_address` | boolean, varsayılan true |
+| `installment_plus` | boolean, varsayılan `true`. `false` ise taksitler ödeme formunda radyo listesi; `true` ise ayrı taksit paneli |
 
 ## Örnek istek
 
